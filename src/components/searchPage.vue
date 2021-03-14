@@ -7,6 +7,7 @@
             v-model="searchInput_v"
             @input="inputValFn"
             placeholder="好货内部价"
+            @keyup.enter="submitFn"
         >
           <!--搜索框放大镜 Icon-->
           <template v-slot:left-icon>
@@ -28,6 +29,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "searchPage",
   data() {
@@ -42,13 +44,29 @@ export default {
       this.isCloseShow = true
     }
   },
+  created() {
+
+  },
   methods: {
+    // watch监听input有没有值
     inputValFn(_v) {
       this.input_v = _v
     },
+    // 清空搜索框
     clear_search_inputFn() {
       this.searchInput_v = ''
       this.isCloseShow = false
+    },
+    // enter时间响应
+    submitFn(){
+      axios.get('http://192.168.0.142:3344/search',{
+        params:{
+          search_key:this.input_v
+        }
+      })
+      .then( _d => {
+        console.log(_d.data)
+      })
     }
   }
 }
