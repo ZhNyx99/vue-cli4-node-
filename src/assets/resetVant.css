@@ -1,0 +1,44 @@
+/* 重置 Vant UI css样式 */
+.tabBtnWrap .van-tab{
+  font-size: .35rem;
+}
+
+.goodsColumn_wrap .van-icon__image{
+  width: 1.47rem;
+  height: 1.47rem;
+}
+
+.goodsColumn_wrap .van-grid-item__text{
+  font-size: .32rem;
+}
+
+.GoodsList_wrap .van-grid-item__text{
+  font-size: .37333rem;
+}
+
+.GoodsList_wrap .van-icon{
+  width: 2.88rem;
+  height: 2.88rem;
+  background: #f5f5f5;
+  border-radius: 4px;
+  margin-bottom: .16rem;
+}
+
+.GoodsList_wrap .van-icon__image{
+  width: 2.88rem;
+  height: 2.88rem;
+}
+
+/*自定义的footer条*/
+/*字体大小*/
+.footer_Div .van-tabbar-item__text{
+  font-size: .32rem;
+}
+.footer_Div .van-tabbar{
+  height: 1.30667rem;
+}
+.footer_Div .van-icon{
+  width: .53333rem;
+  height: .53333rem;
+  font-size: .53333rem;
+}

@@ -12,7 +12,7 @@ app.all('*',function (req,res,next){
   res.header("Content-Type","application/json;charset=utf-8")
   next()
 })
-
+// 搜索
 app.get('/search',(req,res) => {
 
   console.log(req.query.search_key)
@@ -48,6 +48,22 @@ app.get('/search',(req,res) => {
   // 写一些假数据,用于模拟收索过程,
 })
 
+// 请求导航栏
+app.get('/get_TabBtn_list',(req,res) => {
+  let _d = ['推荐','居家生活','服饰鞋包','美食酒水','个护清洁','母婴亲子','运动旅行','数码家电','严选全球','众筹']
+  res.send( _d )
+})
+
+// 轮播图
+app.get('/get_swipe_img',(req,res) => {
+  let _n = [
+    'https://yanxuan.nosdn.127.net/ee856ce5b451dbdeab78abffce195957.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+    'https://yanxuan.nosdn.127.net/195499737e4c86964fc5ba16a3af484c.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+    'https://yanxuan.nosdn.127.net/43545a96cf86a70c72037094982fa51d.jpg?type=webp&imageView&quality=75&thumbnail=750x0',
+    'https://yanxuan.nosdn.127.net/6bde94bfe94e65253e7bc636c225d23e.jpg?type=webp&imageView&quality=75&thumbnail=750x0'
+  ]
+  res.send(_n)
+})
 
 app.listen(3344,() => {
   console.log('高仿网易严选第二版,中间件,已经启动!')
